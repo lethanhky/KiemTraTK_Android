@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     EditText n1,n2;
-    Button btn_tinhtong;
+    Button btn_tinhtong,btn_tinhhieu;
     TextView textv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         n1 = (EditText)findViewById(R.id.num1);
         n2 = (EditText)findViewById(R.id.num2);
         btn_tinhtong = (Button)findViewById(R.id.button1);
+        btn_tinhhieu = (Button)findViewById(R.id.btn_th);
         textv = (TextView) findViewById(R.id.textViewtt);
         btn_tinhtong.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -26,6 +27,15 @@ public class MainActivity extends AppCompatActivity {
                 int nu2 = Integer.parseInt(n2.getText().toString());
                 int tong = nu1 + nu2;
                 textv.setText("tong = "+ tong);
+            }
+        });
+        btn_tinhhieu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int nu1 = Integer.parseInt(n1.getText().toString());
+                int nu2 = Integer.parseInt(n2.getText().toString());
+                int tong = nu1 - nu2;
+                textv.setText("hieu = "+ tong);
             }
         });
 
